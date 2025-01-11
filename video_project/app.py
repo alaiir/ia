@@ -2,7 +2,7 @@ import os
 import requests
 import pyttsx3
 from flask import Flask, render_template, request, send_from_directory
-from moviepy.editor import *
+from moviepy import *
 
 app = Flask(__name__)
 
