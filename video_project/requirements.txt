@@ -1,0 +1,4 @@
+flask
+requests
+pyttsx3
+moviepy

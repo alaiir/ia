@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Vídeos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        input, button {
+            margin: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        video {
+            margin-top: 20px;
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Gerador de Vídeos a Partir de Texto</h1>
+    <form method="POST">
+        <label for="text_input">Digite o texto para gerar o vídeo:</label><br>
+        <textarea id="text_input" name="text_input" rows="4" cols="50" placeholder="Digite seu texto aqui..." required></textarea><br>
+        <button type="submit">Gerar Vídeo</button>
+    </form>
+
+    {% if video_url %}
+        <h2>Vídeo Gerado:</h2>
+        <video controls>
+            <source src="{{ url_for('download', filename='final_video.mp4') }}" type="video/mp4">
+            Seu navegador não suporta o elemento de vídeo.
+        </video>
+    {% endif %}
+
+</body>
+</html>
